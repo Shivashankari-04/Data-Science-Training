@@ -1,0 +1,4 @@
+SupplierID,SupplierName,email,phone,Region
+1,Alpha Supplies,alpha@supplies.com,9876543210,Chennai
+2,Beta Traders,beta@traders.com,9123456780,Bangalore
+3,Gamma Distributors,gamma@distributors.com,9000001111,Delhi

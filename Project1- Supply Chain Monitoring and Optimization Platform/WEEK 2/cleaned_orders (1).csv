@@ -1,0 +1,4 @@
+OrderID,SupplierID,inventory_id,OrderDate,DeliveryDate,Status,Quantity,DaysDelayed,Delayed
+1,1,1,2025-07-01,2025-07-03,Delivered,30,2,1
+2,2,2,2025-07-05,2025-07-23,Delivered,10,18,1
+3,2,3,2025-07-06,2025-07-09,Delivered,20,3,1

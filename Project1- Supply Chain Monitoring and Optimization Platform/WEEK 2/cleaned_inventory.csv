@@ -1,0 +1,6 @@
+inventory_id,ItemName,quantity,ReorderThreshold,supplier_id
+1,Laptop Battery,50,20,1
+2,Keyboard,15,10,2
+3,HDMI Cable,5,10,2
+4,Monitor,25,15,3
+5,Wireless Mouse,8,10,1
