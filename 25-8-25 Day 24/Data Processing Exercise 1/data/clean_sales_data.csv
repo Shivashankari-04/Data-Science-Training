@@ -1,0 +1,5 @@
+transactionid,customername,product,quantity,price,date
+1,Alice,Notebook,2,5.5,2025-01-05
+2,Bob,Pen,5,1.2,2025-02-10
+5,Eva,Eraser,1,0.5,2025-04-15
+6,Frank,Marker,2,1.75,2025-05-10
