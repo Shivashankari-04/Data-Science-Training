@@ -1,0 +1,29 @@
+trigger:
+- main   # adjust branch name if needed
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+  displayName: 'Set up Python'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+# Run your Jupyter Notebook (data cleaning + enrichment + blob upload)
+- script: |
+    papermill sales_data_pipeline.ipynb output_notebook.ipynb
+  displayName: 'Execute Sales Data Pipeline Notebook'
+
+# Publish the raw & processed CSVs as pipeline artifacts
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'data'
+    ArtifactName: 'sales-data'
+    publishLocation: 'Container'
+  displayName: 'Publish CSV files as artifacts'
