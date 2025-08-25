@@ -1,0 +1,7 @@
+order_id,customer,region,revenue,cost
+201,Alice,North,120000.0,80000
+202,Bob,East,75000.0,40000
+203,Charlie,,50000.0,30000
+204,David,West,,20000
+205,Eva,South,30000.0,15000
+202,Bob,East,75000.0,40000
