@@ -1,0 +1,37 @@
+trigger:
+  - main   # Runs pipeline when code is pushed to main branch
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  # Step 1: Checkout repository
+  - task: Checkout@1
+    displayName: "Checkout source code"
+
+  # Step 2: Set Python version
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: "3.10"
+      addToPath: true
+    displayName: "Set up Python 3.10"
+
+  # Step 3: Install dependencies
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+      pip install jupyter nbconvert papermill
+    displayName: "Install dependencies"
+
+  # Step 4: Execute your notebook
+  - script: |
+      jupyter nbconvert --to notebook --execute Supply_Pipeline.ipynb --output executed_Supply_Pipeline.ipynb
+    displayName: "Run Supply_Pipeline notebook"
+
+  # Step 5: Publish executed notebook as pipeline artifact
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "executed_Supply_Pipeline.ipynb"
+      ArtifactName: "notebook-output"
+      publishLocation: "Container"
+    displayName: "Publish executed notebook"
