@@ -1,0 +1,8 @@
+customer_id,name,email,phone,region
+1,Rahul Kumar,rahul@example.com,9876543210,North
+2,Anita Sharma,anita@example.com,9123456780,South
+3,Vijay Rao,vijay@example.com,9988776655,East
+4,Swathi Menon,swathi@example.com,9090909090,West
+5,Arjun Das,arjun@example.com,9012345678,Central
+6,Pooja Nair,pooja@example.com,9345671234,South
+7,Amit Khanna,amit@example.com,9988001122,North
